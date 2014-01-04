@@ -16,5 +16,4 @@
 	
 	<bean id="documentDao" class="gr.shmmy.ntua.dms.dao.DocumentDaoImpl"/>
 	
-	
 </beans>

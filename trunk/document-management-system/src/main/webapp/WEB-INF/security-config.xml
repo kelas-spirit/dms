@@ -6,7 +6,7 @@
           http://www.springframework.org/schema/security
           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
-	<!-- enable securitry annotations for method based security  -->
+	<!-- enable securitry annotations for method based security -->
 	<security:global-method-security
 		secured-annotations="enabled" />
 
@@ -18,22 +18,20 @@
 
 	<!-- http -->
 	<security:http auto-config="true" use-expressions="true">
-		
-<!--		<security:intercept-url pattern="/**"-->
-<!--				access="permitAll" requires-channel="http" />-->
+
+		<!-- <security:intercept-url pattern="/**" -->
+		<!-- access="permitAll" requires-channel="http" /> -->
 
 
 		<security:intercept-url pattern="/**"
 			access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_ADMIN','ROLE_USER')"
 			requires-channel="any" />
-		
+
 		<security:form-login login-page='/'
 			login-processing-url="/j_spring_security_check"
-			authentication-failure-url="/home?login_error=t"
-			default-target-url="/" 
+			authentication-failure-url="/home?login_error=t" default-target-url="/"
 			authentication-success-handler-ref="loginController"
-			authentication-failure-handler-ref="loginController"
-		/>
+			authentication-failure-handler-ref="loginController" />
 
 		<security:session-management
 			invalid-session-url="/" />
@@ -46,12 +44,12 @@
 	</security:http>
 
 	<security:authentication-manager>
+		<!-- <security:authentication-provider ref="authenticationService" /> -->
 		<security:authentication-provider>
 			<security:jdbc-user-service
 				data-source-ref="dataSource"
-				users-by-username-query="select username, password, true from users where username=?"
-				authorities-by-username-query="select u.username, ur.authority from users u, user_roles ur where u.user_id = ur.user_id and u.username =?" />
+				users-by-username-query="select username, password, true from user where username=?"
+				authorities-by-username-query="select u.username, ur.authority from user u, user_role ur where u.user_id = ur.user_id and u.username =?" />
 		</security:authentication-provider>
 	</security:authentication-manager>
-
 </beans>
