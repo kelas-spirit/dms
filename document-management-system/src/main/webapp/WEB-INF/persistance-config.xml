@@ -27,7 +27,7 @@
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.bharat.dms.domain" />
+		<property name="packagesToScan" value="gr.shmmy.ntua.dms.domain" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
@@ -47,7 +47,9 @@
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+	<bean id="userDao" class="gr.shmmy.ntua.dms.dao.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 </beans>

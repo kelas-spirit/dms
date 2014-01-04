@@ -15,22 +15,5 @@ promise any kind of development work on this application. I work on this project
 during my free/vacation time only.</p>
 <p>I reserve all rights to change any functionality at any point of time.</p>
 
-<p>Know more about me</p>
-<table cellpadding="5"
-	style="text-align: left;">
-	<tr>
-		<td>About me:&nbsp;<a href="http://bharatonjava.wordpress.com/about/" target="_blank">http://bharatonjava.wordpress.com/about</a></td>
-	</tr>
-	<tr>
-		<td>Email:&nbsp; <a href="mailto:ibharatsharma@gmail.com">ibharatsharma@gmail.com</a>
-		</td>
-	</tr>
-	<tr>
-		<td>Project Blog&nbsp;<a href="http://bharatonjava.wordpress.com/document-management-system/" target="_blank">http://bharatonjava.wordpress.com</a></td>
-	</tr>
-	<tr>
-		<td>Get Project Source from &nbsp;<a href="https://document-management-tool.googlecode.com/svn/trunk/document-management-system/" target="_blank">here</a></td>
-	</tr>
-</table>
 </body>
 </html>

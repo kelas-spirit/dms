@@ -2,6 +2,9 @@ package gr.shmmy.ntua.dms.utils;
 
 import java.io.File;
 
+import org.apache.commons.codec.StringEncoder;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.digester.Digester;
 import org.apache.log4j.Logger;
 
 public class Utils {
@@ -26,5 +29,9 @@ public class Utils {
 		}
 
 		return false;
+	}
+	
+	public static String hash(String password){
+		return DigestUtils.sha1Hex(password);
 	}
 }

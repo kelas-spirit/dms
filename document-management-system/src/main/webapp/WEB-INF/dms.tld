@@ -7,10 +7,10 @@ jsptaglibrary_2_1.xsd"
 	<tlib-version>1.0</tlib-version>
 	<jsp-version>2.1</jsp-version>
 	<short-name>dmsTaglib</short-name>
-	<uri>http://dms-bharat/tags</uri>
+	<uri>http://shmmy-dms/tags</uri>
 	<tag>
 		<name>block</name>
-		<tag-class>com.bharat.dms.web.customTags.Block</tag-class>
+		<tag-class>gr.shmmy.ntua.dms.web.customTags.Block</tag-class>
 		<body-content>JSP</body-content>
 		<description>This tag renders a rounded corner block<br/>
 		title : title of the block</description>
