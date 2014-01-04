@@ -25,8 +25,8 @@ CREATE TABLE  `dms`.`USER_ROLES` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-DROP TABLE IF EXISTS `dms`.`metadata`;
-CREATE TABLE  `dms`.`metadata` (
+DROP TABLE IF EXISTS `dms`.`METADATA`;
+CREATE TABLE  `dms`.`METADATA` (
   `METADATA_ID` bigint(20) NOT NULL AUTO_INCREMENT,
   `COMMENTS` longtext,
   `CREATED_USER` varchar(255) DEFAULT NULL,
@@ -45,6 +45,6 @@ CREATE TABLE  `dms`.`metadata` (
 insert into `dms`.USERS(user_id, ENABLED, USERNAME, PASSWORD) values(1,1,'a','a');
 insert into `dms`.USERS(user_id, ENABLED, USERNAME, PASSWORD) values(2,1,'b','b');
 
-insert into USER_ROLES(USER_ROLE_ID, USER_ID,AUTHORITY) VALUES(1,1,'ROLE_USER');
-insert into USER_ROLES(USER_ROLE_ID, USER_ID,AUTHORITY) VALUES(2,2,'ROLE_ADMIN');
+insert into `dms`.USER_ROLES(USER_ROLE_ID, USER_ID,AUTHORITY) VALUES(1,1,'ROLE_USER');
+insert into `dms`.USER_ROLES(USER_ROLE_ID, USER_ID,AUTHORITY) VALUES(2,2,'ROLE_ADMIN');
 
