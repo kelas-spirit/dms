@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+"http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+
+	<!--	Base layouts start -->
+	<definition name="template" template="/WEB-INF/views/templates/mainTemplate.jsp">
+		<put-attribute name="top" value="/WEB-INF/views/includes/header.jsp" />
+		<put-attribute name="topTabs" value="/WEB-INF/views/includes/topTabs.jsp"/>
+		<put-attribute name="side"
+			value="/WEB-INF/views/includes/navigation.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/includes/footer.jsp" />
+	</definition>
+
+	<definition name="fullPageTemplate"
+		template="/WEB-INF/views/templates/mainTableTemplate.jsp">
+		<put-attribute name="topTabs" value="/WEB-INF/views/includes/topTabs.jsp"/>
+		<put-attribute name="top" value="/WEB-INF/views/includes/header.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/views/includes/footer.jsp" />
+	</definition>
+	
+	<!--	Base layouts end -->
+
+	<definition name="login" extends="template">
+		<put-attribute name="title" value="Home" />
+		<put-attribute name="content" value="/WEB-INF/pages/loginPage.jsp" />
+	</definition>
+	
+	<definition name="uploadForm" extends="template">
+		<put-attribute name="title" value="Upload" />
+		<put-attribute name="content" value="/WEB-INF/pages/documentUploadForm.jsp" />
+	</definition>
+	
+	<definition name="listDocs" extends="template">
+		<put-attribute name="title" value="Latest Documents" />
+		<put-attribute name="content" value="/WEB-INF/pages/listDocuments.jsp" />
+	</definition>
+	
+	<definition name="disclaimer" extends="template">
+		<put-attribute name="title" value="Disclaimer" />
+		<put-attribute name="content" value="/WEB-INF/pages/disclaimer.jsp" />
+	</definition>
+
+	<definition name="errorView" extends="template">
+		<put-attribute name="title" value="Error!" />
+		<put-attribute name="content" value="/WEB-INF/pages/errorPage.jsp" />
+	</definition>
+	
+	<definition name="userAddEditForm" extends="template">
+		<put-attribute name="title" value="Add/Edit User" />
+		<put-attribute name="content" value="/WEB-INF/pages/userAddEditForm.jsp" />
+	</definition>
+	
+</tiles-definitions>
