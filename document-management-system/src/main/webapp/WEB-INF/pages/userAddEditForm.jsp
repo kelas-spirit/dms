@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<sf:form method="POST" modelAttribute="formBean">
+<sf:form method="POST"  modelAttribute="formBean">
 	<s:bind path="*">
 		<c:if test="${status.error}">
 			<div id="message" class="error">Form has errors</div>
@@ -25,11 +25,28 @@
 
 	<table cellspacing="5" align="left" style="text-align: left;"
 		border="0">
+		
+		<!-- firstname -->
+		<tr>
+			<th><label for="firstname">Firstname:</label></th>
+			<td style="width:160px;"><sf:input path="firstname" size="15" id="firstname"
+				maxlength="15" cssStyle="width:150px;" /></td>
+			<td>&nbsp;<sf:errors path="firstname" cssStyle="color:red;" /></td>
+		</tr>
+		
+		<!-- lastname -->
+		<tr>
+			<th><label for="lastname">Firstname:</label></th>
+			<td style="width:160px;"><sf:input path="lastname" size="15" id="lastname"
+				maxlength="15" cssStyle="width:150px;" /></td>
+			<td>&nbsp;<sf:errors path="lastname" cssStyle="color:red;" /></td>
+		</tr>
+		<!-- username -->
 		<tr>
 			<th><label for="username">Username:</label></th>
 			<td style="width:160px;"><sf:input path="username" size="15" id="username"
 				maxlength="15" cssStyle="width:150px;" /></td>
-			<td>&nbsp;<sf:errors path="username" cssStyle="color:red;" /></td>
+			<td style="color:red;">&nbsp;<sf:errors path="username" cssStyle="color:red;" />${userErr}</td>
 		</tr>
 		<tr title="Password">
 			<th><label for="password">Password:</label></th>
@@ -41,7 +58,7 @@
 			<th><label for="rePassword">Confirm Password:</label></th>
 			<td  style="width:160px;"><sf:password path="rePassword" size="15" id="rePassword"
 				maxlength="15" cssStyle="width:150px;" /></td>
-			<td>&nbsp;<sf:errors path="rePassword" cssStyle="color:red;" /></td>
+			<td style="color:red;">&nbsp;<sf:errors path="rePassword" cssStyle="color:red;" />${RePassErr} </td>
 		</tr>
 		<tr title="">
 			<th><label for="roles">Roles:</label></th>
@@ -63,7 +80,7 @@
 				</tr>
 			</table>
 			</td>
-			<td style="font-size: 9; color: red;">Admin Role should be granted with
+			<td style="font-size: 9; color: blue;">Admin Role should be granted with
 					Caution<br />
 					User with this role will have access to all the<br />
 					documents.</td>
@@ -76,6 +93,7 @@
 	</table>
 	</fieldset>
 </sf:form>
+<!--  
 <table width="500" border="0" >
 	<tr style="font-weight: bold; background-color: #321900; color: #FFFFFF;">
 		<td width="50">Sr.No.</td>
@@ -109,6 +127,6 @@
 		</tr>
 	</c:forEach>
 </table>
-
+ -->
 </body>
 </html>

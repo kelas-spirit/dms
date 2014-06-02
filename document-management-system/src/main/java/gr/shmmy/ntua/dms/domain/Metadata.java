@@ -1,5 +1,6 @@
 package gr.shmmy.ntua.dms.domain;
 
+import java.sql.Blob;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -16,9 +17,9 @@ public class Metadata {
 
 	private Long metadataId;
 	private String createUser;
-	private String updatedUser;
+	//private String updatedUser;
 	private String subject;
-	private String keywords;
+	private int enabled;
 	private String comments;
 	private String documentFileName;
 	private Date createdDate;
@@ -26,6 +27,9 @@ public class Metadata {
 	private String documentType;
 	private Long documentSize;
 	private String owner;
+	private Long parrentId;
+	private byte[] file;
+	private Blob content;
 	
 	public Metadata() {
 	}
@@ -50,14 +54,7 @@ public class Metadata {
 		this.createUser = createUser;
 	}
 	
-	@Column(name = "UPDATED_USER")
-	public String getUpdatedUser() {
-		return updatedUser;
-	}
 	
-	public void setUpdatedUser(String updatedUser) {
-		this.updatedUser = updatedUser;
-	}
 	
 	@Column(name = "SUBJECT")
 	public String getSubject() {
@@ -68,6 +65,7 @@ public class Metadata {
 		this.subject = subject;
 	}
 
+	/*
 	@Column(name = "KEYWORDS")
 	public String getKeywords() {
 		return keywords;
@@ -75,7 +73,7 @@ public class Metadata {
 
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
-	}
+	}*/
 
 	@Column(name = "COMMENTS", length = 2000)
 	public String getComments() {
@@ -137,9 +135,39 @@ public class Metadata {
 	public String getOwner() {
 		return owner;
 	}
-	
 	public void setOwner(String owner) {
 		this.owner = owner;
+	}
+	
+	@Column(name = "PARRENT_ID")
+	public Long getParrentId() {
+		return parrentId;
+	}
+
+	public void setParrentId(Long parrentId) {
+		this.parrentId = parrentId;
+	}
+	@Column(name = "ENABLED", precision = 1, scale = 0, length = 1)
+	public int getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+	 public byte[] getFile() {
+	      return file;
+	   }
+	   public void setFile(byte[] file) {
+	      this.file = file;
+	   }
+	   
+	public Blob getContent(){
+		return content;
+	}
+	
+	public void setContent(Blob content){
+		this.content=content;
 	}
 
 }

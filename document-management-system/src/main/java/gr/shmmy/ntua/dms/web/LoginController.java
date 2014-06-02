@@ -64,6 +64,7 @@ public class LoginController implements AuthenticationSuccessHandler,
         log.info("Authorities : " + auth.getAuthorities());
         log.info("*******************************************");
 		//request.getRequestDispatcher("/docs").forward(request, response);
+        
 		response.sendRedirect("docs");
 	}
 
@@ -73,6 +74,7 @@ public class LoginController implements AuthenticationSuccessHandler,
 			throws IOException, ServletException {
 		msgPrinter("Authentication Failed");
 		log.info(request.getContextPath());
+		
 		request.setAttribute("loginErr", "Incorrect Username or Password!");
 		request.getRequestDispatcher("/").forward(request, response);
 	}

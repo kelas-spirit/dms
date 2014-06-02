@@ -11,6 +11,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<s:url value="/assets/images/background_image.jpg" 
+				var="background_image" />
+<style>
+#loginbackground{
+position:absolute;
+right:5px;
+top:1px;
+}
+
+
+</style>
 <script type="text/javascript">
  function setFocus(){
 	document.getElementById('username_or_email').focus();
@@ -19,15 +30,34 @@
 </head>
 <body onload="setFocus()">
 <div style="text-align: center; vertical-align: center">
-<h2>Sign into Document Management System</h2>
+<!--  --
 <p>Document Management System is a great place to store your
 important documents. It lets you Upload, Search and Download Documents.
 </p>
-
-
+ -->
 <s:url var="authUrl" value="/j_spring_security_check" />
+
+<s:url value="/assets/images/folders.jpg" 
+				var="folders" />
+
+
+		<!--  --
+		<img src="${folders}" 
+		width="370"
+				height="150"
+				 />
+				  -->
+<div id="loginbackground">
+<img src="${background_image}" 
+		width="600"
+				height="650"
+				 />
+	
+	</div>			
+
+
+
 <form method="post" class="signin" action="${authUrl}">
-<fieldset>
 <table cellspacing="5" border="0" bordercolor="red" class="loginTable">
 
 	<c:if test="${loginErr ne null}">
@@ -39,14 +69,14 @@ important documents. It lets you Upload, Search and Download Documents.
 	</c:if>
 
 	<tr>
-		<th><label for="username_or_email">Username or Email</label></th>
+		<th><label for="username_or_email">Username</label></th>
 		<td><input id="username_or_email" name="j_username" type="text"
 			style="" /></td>
 	</tr>
 	<tr>
 		<th><label for="password">Password</label></th>
 		<td><input id="password" name="j_password" type="password"
-			style="" /> <small><a href="/account/resend_password">Forgot?</a></small></td>
+			style="" /> <small><a href="public/registration" style="text-decoration:none; color:green">or Registration</a></small></td>
 	</tr>
 	<tr>
 		<th>&nbsp;</th>
@@ -57,12 +87,12 @@ important documents. It lets you Upload, Search and Download Documents.
 	<tr>
 		<th>&nbsp;</th>
 		<td><input name="commit" type="submit" value="Sign In"
-			class="button" style="width: 100px;" /></td>
+			class="button" style="width: 100px; color:white; background:#0066FF" /></td>
 	</tr>
 </table>
-</fieldset>
 </form>
 
 </div>
+
 </body>
 </html>

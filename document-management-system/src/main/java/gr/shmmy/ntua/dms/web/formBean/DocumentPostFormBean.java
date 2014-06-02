@@ -7,7 +7,7 @@ public class DocumentPostFormBean {
 	private String keywords;
 	private String comments;
 	private boolean isPublic;
-
+    private Long parrentId;
 	public DocumentPostFormBean() {
 	}
 
@@ -49,6 +49,13 @@ public class DocumentPostFormBean {
 	
 	public void setIsPublic(boolean isPublic) {
 		this.isPublic = isPublic;
+	}
+	public Long getParrentId() {
+		return parrentId;
+	}
+
+	public void setParrentId(Long parrentId) {
+		this.parrentId = parrentId;
 	}
 
 	@Override

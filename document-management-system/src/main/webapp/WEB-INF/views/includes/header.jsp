@@ -6,7 +6,9 @@
 <html>
 <style>
 p2.normal {font-style:normal;}
+/*
 p2.italic {font-style:italic;}
+*/
 p2.oblique {font-style:oblique;}
 p2 {font-size:150%;}
 p1 {font-size:120%;}
@@ -17,27 +19,28 @@ dms-string{font-size:200%;}
 
 <security:authentication property="principal.username" var="uName"/>
 
+<s:url value="/assets/images/pencils.jpg" 
+				var="pencils" />
+
 <table border="0" style="width: 100%; color: #0066FF; height:90px;">
 	<tr>
 		<td>
-		<s:url value="/assets/images/dms_image.png" 
+		<s:url value="/assets/images/dms_image.jpg" 
 				var="dmslogo" />
 			
 			<s:url value="/docs" var="docsLink"/>	
-			<a href="${docsLink}" style="border: none;">
 			<img src="${dmslogo}" 
 				alt="DOCUMENT MANAGEMENT SYSTEM" 
 				width="170"
-				height="80" />
-			</a><dms-string>&nbsp;&nbsp;DOCUMENT MANAGEMENT SYSTEM</dms-string>
+				height="90" />
+				
 		</td>
+		
 		<td>&nbsp;</td>
 
 		<td width="150">
 		
-		<%--
-		Show Welcome message and logout link only when some user has logged in.
-		 --%>
+		
 		 		
 		<security:authorize access="isAuthenticated()">
 			<table style="width: 100%; color: #0066FF;" border="0">
@@ -45,16 +48,22 @@ dms-string{font-size:200%;}
 					<td><s:url value="/j_spring_security_logout" var="logoutUrl" />
 					<a href="${logoutUrl}" style="color: #0066FF; margin-left:70%;">Logout</a></td>
 				</tr>
-				<tr>
-					<td><p1>Welcome </p1>,&nbsp;<p2 class="italic">${uName}</p2></td>
-				
-					<td>&nbsp;</td>
-				</tr>
 				
 			</table>
+		
+	
+		
+	<div id="uname">Welcome, ${uName} </div>
+		<div id="pencil">	
+		<img src="${pencils}" 
+		width="570"
+				height="90"
+				 />
+				 </div> 
 		</security:authorize>
 		</td>
 	</tr>
 </table>
+<div id="dms_header">DOCUMENT MANAGEMENT SYSTEM</div>	
 </body>
 </html>
