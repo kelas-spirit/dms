@@ -5,7 +5,7 @@ package gr.shmmy.ntua.dms.service;
 
 import gr.shmmy.ntua.dms.dao.UserDao;
 import gr.shmmy.ntua.dms.domain.User;
-import gr.shmmy.ntua.dms.utils.Utils;
+//import gr.shmmy.ntua.dms.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Component;
 
 /**
- * @author npapadopoulos
+ * @author kelas.spirit
  * 
  */
 @Component
@@ -35,8 +35,8 @@ public class AuthenticationService implements AuthenticationProvider {
 
 		String username = authentication.getName();
 		String password = authentication.getCredentials().toString();
-		String hashedPassword = Utils.hash(password);
-
+	//	String hashedPassword = Utils.hash(password);
+		String hashedPassword = "min";
 		User user = userDao.findUserByUsernameAndPassword(username,
 				hashedPassword);
 

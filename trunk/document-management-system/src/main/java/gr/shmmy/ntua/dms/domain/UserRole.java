@@ -7,7 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "USER_ROLE")
+@Table(name = "USER_ROLES")
 public class UserRole {
 
 	private Long userRoleId;

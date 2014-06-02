@@ -14,9 +14,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.*;
+
 
 @Entity
-@Table(name = "USER")
+
+@Table(name = "USERS")
+/*
+@NamedQuery(name="User.findByName", query = "select u from User u where u.username = :username")*/
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 3085500718224521430L;
@@ -24,20 +29,22 @@ public class User implements Serializable {
 	private Long userId;
 	private String username;
 	private String password;
+	private String firstname;
+	private String lastname;
+	private String email;
 	private int enabled;
 	private Set<UserRole> userRoles = new HashSet<UserRole>();
-/*set=taksinomimeno,hashset den einai taksinomimeno,sumperiferontai
- * kati san geniko(obwee) set of values,diladi sunolo aksiwn,
- * opws katalavenoume to set einai pio grugoro apo to hashset
- * */
+
 	/* constructors */
 	public User() {
 	}
 
-	public User(String username, String password, int enabled) {
+	public User(String username, String password,String firstname, String lastname, int enabled) {
 		super();
 		this.username = username;
 		this.password = password;
+		this.firstname= firstname;
+		this.lastname=lastname;
 		this.enabled = enabled;
 	}
 
@@ -56,6 +63,8 @@ public class User implements Serializable {
 	public String getUsername() {
 		return username;
 	}
+	
+	
 
 	public void setUsername(String username) {
 		this.username = username;
@@ -68,6 +77,32 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	
+	@Column(name = "FIRSTNAME", length = 100)
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+	
+	@Column(name = "LASTNAME", length = 100)
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	@Column(name = "EMAIL")
+	public String getEmail() {
+	    return email;
+	}
+	public void setEmail(String email) {
+	    this.email = email;
 	}
 
 	@Column(name = "ENABLED", precision = 1, scale = 0, length = 1)
