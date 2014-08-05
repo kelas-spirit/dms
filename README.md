@@ -1,8 +1,6 @@
 dms
 ===
 
-Created by Kelesidis Nikolaos (kelas.spirit@gmail.com)
-
 
 Document Managment System
 
