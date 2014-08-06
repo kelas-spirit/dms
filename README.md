@@ -2,7 +2,7 @@ dms
 ===
 
 
-Document Managment System
+Document Management System
 
 Java Spring + Hibernate
 
@@ -17,4 +17,4 @@ Java Spring + Hibernate
 - file sharing (extraction of URLs for sharing)
 - subscribe options
 -logged users
--chat
+-simple chat
